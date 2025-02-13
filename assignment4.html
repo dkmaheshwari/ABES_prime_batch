@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<style>
+    .Navbar{
+        display:flex;
+        align-items:center;
+        background-color:rgb(4, 4, 121);
+        }
+    .items{
+        background-color:whitesmoke;
+        margin-left: 40px;
+        height: 30px;
+        width: 60px;
+        align-items:center;
+        display:flex;;
+        padding-left:10px;
+        border-top-right-radius:15px;
+        border-bottom-left-radius:15px;
+         transition: .5s; 
+    }
+    .search-bar{
+        padding:10px;
+        margin:20px;
+        border-radius:15px;
+        width: 500px;
+        height: 25px;
+    }
+    .items:hover{
+        border-top-left-radius:15px;
+        border-bottom-right-radius:15px;
+        border-top-right-radius:0px;
+        border-bottom-left-radius:0px;
+        border:5px solid;
+        border-color: rgb(14, 14, 241);
+        animation-duration: 2s;
+    }
+    .icon{
+        margin-left: 30px;
+        height: 30px;
+        width: 30px;
+        background-color: rgb(124, 219, 204);
+        border-radius:50%;
+        border-style: solid;
+        border-color:rgb(233, 222, 163);
+        border-width: 5px;
+    }
+    .icon:hover{
+        border-style: dashed;
+        border-width: 5px;
+         transition: .5s; 
+    }
+</style>
+<body>
+    <div class="Navbar">
+        <div class="items">Home</div>
+        <div class="items">About</div>
+        <div  class="items">Help</div>
+        <input type="text" class="search-bar"placeholder="✨Search here...🔍">
+        <div class="icon"></div>
+    </div>
+</body>
+</html>
