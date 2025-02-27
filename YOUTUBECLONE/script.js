@@ -5882,30 +5882,63 @@ const dummyData = [
 
 const root = document.querySelector("main");
 
+// Dummy data for testing (Replace with real API data)
+const testData = [
+  {
+    title: "JavaScript Tutorial",
+    author: "Code Academy",
+    videoId: "abc123",
+    videoThumbnails: [{ url: "https://via.placeholder.com/150" }],
+  },
+  {
+    title: "Learn HTML",
+    author: "Web Dev",
+    videoId: "xyz789",
+    videoThumbnails: [{ url: "https://via.placeholder.com/150" }],
+  },
+];
+
+// Function to display videos
 const showUI = (list) => {
+  root.innerHTML = ""; // Clear previous results
+  if (list.length === 0) {
+    root.innerHTML = "<p>No results found</p>";
+    return;
+  }
+
   list.forEach((obj, idx) => {
     const newCard = document.createElement("div");
+    newCard.className = "card";
+    newCard.innerHTML = `
+<img 
+src='${obj.videoThumbnails[0].url}' 
+width="100%" 
+ onmouseover='handleHover(event, ${idx})'~ >
+            <h6>${obj.author}</h6>
+            <h4>${obj.title}</h4>
+        `;
+
     newCard.addEventListener("click", () => {
       window.open(`./video.html?id=${obj.videoId}`, "_top");
     });
-    newCard.className = "card";
-    newCard.innerHTML = `
-            <img 
-                src='${obj.videoThumbnails[0].url}' 
-                width="100%" 
-                onmouseover='handleHover(event, ${idx})'
-            >
-            <h6>${obj.author}</h6>
-            <h4>${obj.title}</h4>
-        `;
 
     root.appendChild(newCard);
   });
 };
 
-const handleHover = (e, idx) => {
-  // const lastImage = dummyData[idx].videoThumbnails.pop();
-  // e.target.src = lastImage.url;
-};
+// Function to filter search results
+function handleSearch() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const showFiltered = dummyData.filter((item) =>
+    item.title.toLowerCase().includes(search)
+  );
+  showUI(showFiltered);
+}
 
-showUI(dummyData);
+// Show all videos initially
+document.addEventListener("DOMContentLoaded", () => {
+  showUI(dummyData);
+});
+
+// Enable live searching on input
+document.getElementById("search").addEventListener("keyup", handleSearch);

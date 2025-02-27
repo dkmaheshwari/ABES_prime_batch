@@ -9,10 +9,13 @@
 </head>
 
 <body>
-    <header>
-        <input type="text" name="search-text" onChange="handleSearch(event)"><button>Search</button>
+    <header id="top">
+        <div id="logo"><img src="Youtubelogo.jpg"></div>
+        <input type="text" name="search-text" class="search" onChange="handleSearch(event)"
+            placeholder="Search a video">
+        <button class="button">Search</button>
     </header>
-    <aside style="padding:1rem;">
+    <aside style="padding:1rem;" id="sidebar">
         <a href="./history.html">
             <h3>HISTORY</h3>
         </a>

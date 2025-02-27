@@ -27,7 +27,7 @@ aside {
 }
 
 main {
-    background-color: blueviolet;
+    background-color: rgb(242, 242, 242);
 
     display: grid;
     justify-content: center;
@@ -41,4 +41,38 @@ main {
 .card {
     /* height: 200px; */
     background-color: orange;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width:35%;
+    border:1px solid black;
+}
+search:hover{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.button{
+    padding: 0.5rem 1rem;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+#top{
+    background-color: #dacfcf;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#sidebar{
+    background-color: #787373;
+}
+#logo img {
+width: 100px; /* Adjust width as needed */
+height: auto; /* Maintain aspect ratio */
 }
